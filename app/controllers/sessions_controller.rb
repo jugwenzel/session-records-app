@@ -4,6 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @sessions = Session.find(params[:id])
+    @session = Session.find(params[:id])
   end
 end

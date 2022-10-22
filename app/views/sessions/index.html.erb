@@ -2,8 +2,8 @@
 
 <ul>
   <% @sessions.each do |session| %>
-    <li>
-      <%= session.title %>
-    </li>
+	<li>
+    <%= link_to session.title, session %>  
+	</li>
   <% end %>
 </ul>
