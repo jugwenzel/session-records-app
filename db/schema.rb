@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_145544) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_23_232240) do
+  create_table "participants", force: :cascade do |t|
+    t.string "name"
+    t.string "role"
+    t.integer "session_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_participants_on_session_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string "title"
     t.date "date"
@@ -18,4 +27,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_145544) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "participants", "sessions"
 end

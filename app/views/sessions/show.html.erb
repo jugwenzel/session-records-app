@@ -5,4 +5,8 @@
 
 <ul>
   <li><%= link_to "Edit", edit_session_path(@session) %></li>
+  <li><%= link_to "Destroy", session_path(@session), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
 </ul>
