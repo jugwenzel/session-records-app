@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "sessions#index"
 
-  resources :sessions
+  resources :sessions do
+    resources :participants
+  end
 
   # quando eu rodei o rails generate controller sessions index, essa foi a route 
   # criada automaticamente:

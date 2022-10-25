@@ -49,3 +49,5 @@ class SessionsController < ApplicationController
   end
 
 end
+
+#{session: {title: "", date: "24/10"}
