@@ -1,5 +1,7 @@
 <h1>Sessions</h1>
 
+The total of recorded sessions is <%= Session.public_count %>!
+
 <ul>
   <% @sessions.each do |session| %>
     <% unless session.archived? %>
