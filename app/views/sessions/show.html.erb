@@ -3,38 +3,18 @@
 <strong> Date: </strong> <%= @session.date %>
 
 <ul>
-<%= link_to "Edit", edit_session_path(@session) %>
-<br>
-<%= link_to "Destroy", session_path(@session), data: {
+  <%= link_to "Edit", edit_session_path(@session) %>
+  <br>
+  <%= link_to "Destroy", session_path(@session), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
+  <br> 
+  <br>            
 </ul>
 
 <h2>Participants</h2>
-<% @session.participants.each do |participant| %>
-  <p>
-    <strong>Name:</strong>
-    <%= participant.name %>
-  </p>
-
-  <p>
-    <strong>Role:</strong>
-    <%= participant.role %>
-  </p>
-<% end %>
+<%= render @session.participants %>
 
 <h2>Add a new participant:</h2>
-<%= form_with model: [ @session, @session.participants.build ] do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :role %><br>
-    <%= form.text_field :role %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'participants/form' %>
