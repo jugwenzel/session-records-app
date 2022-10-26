@@ -1,12 +1,13 @@
-<p>
-  <strong>Participant:</strong>
-  <%= participant.name %>
-</p>
+<% unless participant.archived? %>
+  <p>
+    <strong>Participant:</strong>
+    <%= participant.name %>
+  </p>
 
-<p>
-  <strong>Role:</strong>
-  <%= participant.role %>
-</p>
+  <p>
+    <strong>Role:</strong>
+    <%= participant.role %>
+  </p>
 
-<br>
-
+  <br>
+<% end %>

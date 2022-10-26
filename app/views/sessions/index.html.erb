@@ -2,9 +2,11 @@
 
 <ul>
   <% @sessions.each do |session| %>
-	<li>
-    <%= link_to session.title, session %>  
-	</li>
+    <% unless session.archived? %>
+      <li>
+        <%= link_to session.title, session %>  
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
