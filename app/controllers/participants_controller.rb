@@ -1,4 +1,7 @@
 class ParticipantsController < ApplicationController
+
+  http_basic_authenticate_with name: "juwenzel", password: "genial123", only: :destroy
+
   def create
     @session = Session.find(params[:session_id])
     @participant = @session.participants.create(participant_params)
