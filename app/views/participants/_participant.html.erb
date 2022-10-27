@@ -9,5 +9,12 @@
     <%= participant.role %>
   </p>
 
-  <br>
+  <%= link_to "Destroy Participant", [participant.session, participant], data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+</p>
+
+<br>
+
 <% end %>
